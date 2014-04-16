@@ -7,14 +7,14 @@ $(document).ready(function() {
   //remove delay for the cards once they finish appearing
   var delay = 0;
   $(".card").each(function(){
-    $(this).css("-webkit-transition-delay", delay/1000 + "s").removeClass("hidden");
-    delay += 200;
+    $(this).css("transition-delay", delay/1000 + "s").removeClass("hidden");
+    delay += 300;
     centerPreviews();
   }, function(){
     delay = 0;
   });
   setTimeout(function() {
-    $(".card").css("-webkit-transition-delay", "");
+    $(".card").css("transition-delay", "");
   }, 1000);
 
   $(".card").click(function() {
@@ -27,7 +27,7 @@ $(document).ready(function() {
 function centerPreviews() {
   var height = $(".card").height() - 60;
   var previewHeight  = $("img.preview").height();
-  $("img.preview").css("paddingTop", (height - previewHeight)/2 );
+  $("img.preview").css("marginTop", (height - previewHeight)/2 );
 }
 
 function openContent() {
