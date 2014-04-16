@@ -103,7 +103,7 @@ html, body {
 }
 
 .card-extend-back {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.4);
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -128,18 +128,6 @@ html, body {
     padding-right: 25px;
     .transition-long;
 
-    /*&:before {
-      position: absolute;
-      bottom: -10px;
-      left: 5px;
-      width: 0px;
-      height: 0px;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid #fff;
-      content:"";
-    }*/
-
     &.open {
       top: 2* @card-padding;
       left: 2 * @card-padding;
@@ -152,8 +140,8 @@ html, body {
         position: absolute;
         height: 40px;
         width: 40px;
-        right: 20px;
-        top: 20px;
+        right: 18px;
+        top: 18px;
         font-size: 25px;
         text-align: center;
         line-height: 40px;
@@ -185,6 +173,19 @@ html, body {
         padding-bottom: 25px;
         font-size: 20px;
       }
+    }
+
+    .pointer {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 0px;
+      height: 0px;
+      margin-left: -10px;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #fff;
+      .transition-long;
     }
   }
 }
