@@ -53,7 +53,7 @@ function populateContent(title, card) {
 
   setTimeout(function() {
     $(".card-extend .title").text(title);
-    $(".card-extend .content").text(content[title]);
+    $(".card-extend .content").html(content[title]);
   }, 150);
   setTimeout(function() { $(".card-extend *:not(.pointer)").fadeIn(100) }, 200);
 
