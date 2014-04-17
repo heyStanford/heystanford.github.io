@@ -1,19 +1,23 @@
 $(document).ready(function() {
 
+  centerPreviews();
+  adjustBG();
+
   $(window).resize(function() {
     centerPreviews();
     adjustBG();
   });
-
-  setTimeout(function(){ showHeader() }, 500);
-  setTimeout(function(){ showCards() }, 3000);
-
 
   $(".card").click(function() {
     openContent();
     populateContent( $.trim($(this).text()), $(this) );
   });
 
+});
+
+$(window).load(function() {
+  setTimeout(function(){ showHeader() }, 500);
+  setTimeout(function(){ showCards() }, 3000);
 });
 
 function showHeader() {
