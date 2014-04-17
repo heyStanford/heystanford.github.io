@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   $(window).resize(function() {
     centerPreviews();
+    adjustBG();
   });
 
   //remove delay for the cards once they finish appearing
@@ -10,6 +11,7 @@ $(document).ready(function() {
     $(this).css("transition-delay", delay/1000 + "s").removeClass("hidden");
     delay += 300;
     centerPreviews();
+    adjustBG();
   }, function(){
     delay = 0;
   });
@@ -23,6 +25,17 @@ $(document).ready(function() {
   });
 
 });
+
+function adjustBG() {
+  if($(window).width() < 1.333333333 * $(window).height()) {
+    $("body").css({
+      "background-size" : "auto 100%",
+      "background-position-x" : "center"
+    });
+  } else {
+    $("body").css("background-size", "");
+  }
+}
 
 function centerPreviews() {
   if( !$(".row").hasClass("open") ) {
