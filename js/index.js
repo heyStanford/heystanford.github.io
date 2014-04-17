@@ -5,11 +5,34 @@ $(document).ready(function() {
     adjustBG();
   });
 
-  //remove delay for the cards once they finish appearing
+  setTimeout(function(){ showHeader() }, 500);
+  setTimeout(function(){ showCards() }, 3000);
+
+
+  $(".card").click(function() {
+    openContent();
+    populateContent( $.trim($(this).text()), $(this) );
+  });
+
+});
+
+function showHeader() {
+  var delay = 0;
+  $(".header *").each(function(){
+    $(this).css("transition-delay", delay/1000 + "s").removeClass("hidden");
+    delay += 1000;
+    centerPreviews();
+    adjustBG();
+  }, function(){
+    delay = 0;
+  });
+}
+
+function showCards() {
   var delay = 0;
   $(".card").each(function(){
     $(this).css("transition-delay", delay/1000 + "s").removeClass("hidden");
-    delay += 300;
+    delay += 400;
     centerPreviews();
     adjustBG();
   }, function(){
@@ -18,13 +41,7 @@ $(document).ready(function() {
   setTimeout(function() {
     $(".card").css("transition-delay", "");
   }, 1000);
-
-  $(".card").click(function() {
-    openContent();
-    populateContent( $.trim($(this).text()), $(this) );
-  });
-
-});
+}
 
 function adjustBG() {
   if($(window).width() < 1.333333333 * $(window).height()) {
@@ -69,6 +86,4 @@ function populateContent(title, card) {
     $(".card-extend .content").html(content[title]);
   }, 150);
   setTimeout(function() { $(".card-extend *:not(.pointer)").fadeIn(100) }, 200);
-
-
 }
