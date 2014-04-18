@@ -16,9 +16,14 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-  setTimeout(function(){ showHeader() }, 500);
-  setTimeout(function(){ showCards() }, 3000);
+  showBody();
+  setTimeout(function(){ showHeader() }, 1500);
+  setTimeout(function(){ showCards() }, 4000);
 });
+
+function showBody() {
+  $(".load-container, body").toggleClass("hidden");
+}
 
 function showHeader() {
   var delay = 0;

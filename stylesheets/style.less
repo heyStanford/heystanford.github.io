@@ -20,6 +20,14 @@
   transition: all 0.4s ease;
 }
 
+.transition-super-long {
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  -o-transition: all 1.0s ease;
+  -ms-transition: all 1.0s ease;
+  transition: all 1.0s ease;
+}
+
 @font-face {
   font-family: Roboto;
   src: url("../font/Roboto-Light.ttf");
@@ -40,6 +48,9 @@ html, body {
 body {
   background: url("../img/background.png");
   background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position-y: 0;
+  .transition-super-long;
 
   &:after {
     position: absolute;
@@ -49,6 +60,35 @@ body {
     width: 100%;
     background-color: rgba(0,0,0,0.2);
     content: "";
+  }
+
+  &.hidden {
+    background-position-y: -250%;
+  }
+}
+
+.load-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: table;
+  .transition-long;
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  .loader-icon {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #333;
+    font-size: 100px;
+    .transition-super-long;
+
+    &.small {
+      font-size: 50px;
+    }
   }
 }
 
