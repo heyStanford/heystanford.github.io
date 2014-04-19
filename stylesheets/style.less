@@ -38,8 +38,16 @@
   src: url("../font/Roboto-Bold.ttf");
 }
 
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 * {
-  box-sizing: border-box!important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 b {
@@ -272,6 +280,55 @@ body {
         padding-top: 25px;
         padding-bottom: 25px;
         font-size: 20px;
+
+        .pics-wrapper {
+          height: 200px;
+          width: 100%;
+          margin-bottom: 20px;
+
+          .pic {
+            display: inline-block;
+            width: 25%;
+            height: 100%;
+            border: 2px solid #fff;
+            background-size: auto 100%;
+            background-position-x: center;
+            background-repeat: no-repeat;
+
+            opacity:0;
+            -webkit-animation:fadeIn ease-in 0.4s;
+            -moz-animation:fadeIn ease-in 0.4s;
+            -o-animation:fadeIn ease-in 0.4s;
+            animation:fadeIn ease-in 0.4s;
+            -webkit-animation-fill-mode:forwards;
+            -moz-animation-fill-mode:forwards;
+            -o-animation-fill-mode:forwards;
+            animation-fill-mode:forwards;
+
+            @pic-delay: 0.3s;
+
+            &:nth-child(2) {
+              -webkit-animation-delay: @pic-delay;
+              -moz-animation-delay: @pic-delay;
+              -o-animation-delay: @pic-delay;
+              animation-delay: @pic-delay;
+            }
+
+            &:nth-child(3) {
+              -webkit-animation-delay: 2 * @pic-delay;
+              -moz-animation-delay: 2 * @pic-delay;
+              -o-animation-delay: 2 * @pic-delay;
+              animation-delay: 2 * @pic-delay;
+            }
+
+            &:nth-child(4) {
+              -webkit-animation-delay: 3 * @pic-delay;
+              -moz-animation-delay: 3 * @pic-delay;
+              -o-animation-delay: 3 * @pic-delay;
+              animation-delay: 3 * @pic-delay;
+            }
+          }
+        }
       }
 
       a.button {
