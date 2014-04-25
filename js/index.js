@@ -82,7 +82,7 @@ function closeContent() {
 }
 
 function populateContent(title, card) {
-  $(".card-extend *:not(.pointer)").fadeOut(100);
+  $(".card-extend *:not(.pointer)").fadeOut(300);
 
   var index = card.parent().index();
   console.log(index);
@@ -93,6 +93,6 @@ function populateContent(title, card) {
   setTimeout(function() {
     $(".card-extend .title").text(title);
     $(".card-extend .content").html(content[title]);
-  }, 150);
-  setTimeout(function() { $(".card-extend *:not(.pointer)").fadeIn(100) }, 200);
+  }, 400);
+  setTimeout(function() { $(".card-extend *:not(.pointer)").fadeIn(300) }, 500);
 }
